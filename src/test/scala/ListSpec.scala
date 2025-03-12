@@ -4,9 +4,9 @@ import org.scalatest.BeforeAndAfter
 import org.scalatest.funsuite.AnyFunSuite
 
 class ListSpec extends AnyFunSuite with BeforeAndAfter {
-var listInstance: List = _
+var listInstance: ListImpl = _
 before {
-  listInstance = new List()
+  listInstance = new ListImpl()
   listInstance.addElement(Some(1))
   listInstance.addElement(Some(2))
   listInstance.addElement(Some(3))

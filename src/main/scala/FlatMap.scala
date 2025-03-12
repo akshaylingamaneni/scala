@@ -1,5 +1,7 @@
 package org.acl
 
+import org.acl.FlatMap.Item
+
 import scala.collection.immutable.List
 
 object FlatMap {
@@ -20,6 +22,14 @@ class FlatMap {
   def flatMapOrders(orders: List[FlatMap.Order]): List[FlatMap.Item] = {
     val mappedList = orders.map(order => order.items)
     mappedList.flatten
+  }
+  
+  def filterZeroQuantityItems(orders: List[Item]) : List[Item] = {
+    orders.filter(item => item.quantity > 0)
+  }
+  
+  def transformToTotalPrice(orders: List[Item]): List[Int]  = {
+    orders.map(item => (item.price * item.quantity).toInt)
   }
 
 }

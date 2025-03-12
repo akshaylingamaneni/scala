@@ -3,7 +3,7 @@ package org.acl
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
-class List {
+class ListImpl {
   private val _list: ListBuffer[Int] = mutable.ListBuffer[Int]()
 
   def list: ListBuffer[Int] = _list
